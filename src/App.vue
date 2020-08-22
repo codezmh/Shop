@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import FootGuide from './components/FootGuide/FootGuide'
 export default {
   name: 'App',
@@ -14,8 +15,15 @@ export default {
   },
   data() {
     return {
-
+      
     }
+  },
+  mounted () {
+    this.getAddress()
+    this.getUserInfo()
+  },
+  methods: {
+    ...mapActions(['getAddress','getUserInfo'])
   }
 }
 </script>
